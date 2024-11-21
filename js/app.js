@@ -1,6 +1,13 @@
+//sw produccion
+var url = window.location.href;
+var swLocation = '/demo/sw.js';
+
 //Agregar bloque 1 
 if(navigator.serviceWorker){
-    navigator.serviceWorker.register('/sw.js');
+    if(url.includes('localhost')){
+        swLocation = '/sw.js';
+    }
+    navigator.serviceWorker.register(swLocation);
 }
 // Referencias de jQuery
 
